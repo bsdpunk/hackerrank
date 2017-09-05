@@ -39,23 +39,25 @@ func solveForX(pset PrisonerSet) (int64, error) {
 	if pset.sweets > double {
 		//pset.sweets
 		if psion%pset.total == psion {
+			//			fmt.Println("1")
 			return psion - 1, nil
 		}
-		//		if (psion%pset.total)-1 == pset.total {
-		//			return 1, nil
-		//		}
-		if (psion%pset.total)-1 == 0 {
+		if (psion-1)%pset.total == 0 {
+			//			fmt.Println("2")
 			return pset.total, nil
 		}
-		if (psion%pset.total)-1 < 0 {
-			return -1 * ((psion % pset.total) - 1), nil
-		}
-		return (psion % pset.total) - 1, nil
-		//final := (psion % pset.total)
+		//if (psion % pset.total) < 0 {
+		//			fmt.Println("3")
+		//	return psion, nil
+		//}
+
+		//	}
+		//	fmt.Println("4")
+		//fmt.Println(psion)
+		return (psion - 1) % pset.total, nil
 	} else if psion > pset.total {
 
 		psion := -1*(pset.total-psion) - 1
-		//fmt.Println(psion)
 		if psion-1 == pset.total {
 			return 1, nil
 		}
@@ -63,12 +65,10 @@ func solveForX(pset PrisonerSet) (int64, error) {
 			return pset.total, nil
 		}
 
-		//psion := -1*(pset.total-pset.sweets) - 1
 		if psion > pset.total {
 			return psion - pset.total, nil
 		}
 		return psion, nil
-		//final := psion
 	} else {
 		return psion - 1, nil
 	}
