@@ -10,3 +10,5 @@ dustyPrisoner.go
 dustyPrisoner.js
 ### Golang Day 1 Data Structures
 dustyData.go
+### Bash Loop Odds
+loop.sh

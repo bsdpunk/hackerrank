@@ -21,7 +21,7 @@ func main() {
 	var ds DataStr
 	scanner := bufio.NewScanner(os.Stdin)
 
-	scanner.Split(bufio.ScanLines)
+	//	scanner.Split(bufio.ScanLines)
 	for scanner.Scan() {
 		words := string(scanner.Text())
 		//fmt.Println(reflect.TypeOf(words))
