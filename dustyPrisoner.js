@@ -24,8 +24,10 @@ function saveThePrisoner(n, m, s){
 	psion = m + s
 	dbl = n * 2
 	//var final int64 := psion
-	if (s > dbl) {
+        //console.log("")
+	if (psion > dbl) {
 		//pset.sweets
+                //console.log("true")
 		if (psion % n == psion) {
 			//			fmt.Println("1")
 			return psion -1 
@@ -46,7 +48,9 @@ function saveThePrisoner(n, m, s){
 	} else if (psion > n) {
 
 		psion = -1*(n - psion) - 1
-		if (psion -1 == n) {
+		
+                       // console.log(psion + " - " + n)
+                    if (psion -1 == n) {
 			return 1
 		}
 		if (psion == 0) {
@@ -54,7 +58,6 @@ function saveThePrisoner(n, m, s){
 		}
 
 		if (psion > n) {
-                        console.log(psion + " - " + n)
 			return psion - n
 		}
 		return psion

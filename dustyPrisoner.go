@@ -58,6 +58,7 @@ func solveForX(pset PrisonerSet) (int64, error) {
 	} else if psion > pset.total {
 
 		psion := -1*(pset.total-psion) - 1
+		//fmt.Println(psion)
 		if psion-1 == pset.total {
 			return 1, nil
 		}
