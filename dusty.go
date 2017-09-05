@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"math"
+	//	"math"
 	"os"
 	//	"reflect"
 	"strconv"
@@ -32,13 +32,14 @@ func parseWords(p []string) (PrisonerSet, error) {
 	return PrisonerSet{rando: rando, sweets: sweets, total: total}, nil
 }
 
-func solveForX(pset PrisonerSet) (float64, error) {
+func solveForX(pset PrisonerSet) (int64, error) {
 	psion := pset.rando + pset.sweets
 	if psion > pset.total {
-		psion := float64(pset.total - psion)
-		return math.Abs(psion), nil
+		psion := -1 * (pset.total - psion)
+
+		return psion, nil
 	}
-	return float64(psion - 1), nil
+	return psion - 1, nil
 }
 
 func main() {
