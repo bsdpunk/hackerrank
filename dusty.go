@@ -34,10 +34,28 @@ func parseWords(p []string) (PrisonerSet, error) {
 
 func solveForX(pset PrisonerSet) (int64, error) {
 	psion := pset.rando + pset.sweets
-	if psion > pset.total {
-		psion := -1 * (pset.total - psion)
+	double := pset.total * 2
+	//var final int64 := psion
+	if pset.sweets > double {
+		//pset.sweets
+		if psion%pset.total == psion {
+			return psion - 1, nil
+		}
+		return (psion % pset.total) - 1, nil
+		//final := (psion % pset.total)
+	}
+	if psion >= pset.total {
+
+		psion := -1*(pset.total-psion) - 1
+		if psion-1 == pset.total {
+			return 1, nil
+		}
+		if psion == 0 {
+			return pset.total, nil
+		}
 
 		return psion, nil
+		//final := psion
 	}
 	return psion - 1, nil
 }
