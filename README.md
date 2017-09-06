@@ -12,3 +12,5 @@ dustyPrisoner.js
 dustyData.go
 ### Bash Loop Odds
 loop.sh
+### Golang Day 2 Operators
+dustyDay2.go
